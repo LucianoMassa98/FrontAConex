@@ -1,0 +1,56 @@
+{
+	"root": true,
+	"env": { "browser": true, "es6": true, "amd": true, "node": true },
+	"extends": [
+		"eslint:recommended",
+		"plugin:react/recommended",
+		"plugin:react/jsx-runtime",
+		"plugin:react-hooks/recommended",
+		"plugin:jsdoc/recommended",
+		"prettier"
+	],
+	"parserOptions": { "ecmaVersion": "latest", "sourceType": "module" },
+	"settings": {
+		"react": { "version": "18.2" }
+	},
+	"plugins": ["react-refresh", "import"],
+	"rules": {
+		// "react-refresh/only-export-components": ["warn", { "allowConstantExport": true }],
+		"no-console": ["warn", { "allow": ["warn", "error", "info"] }],
+		"react/prop-types": "off",
+		"jsdoc/require-param-description": "off",
+		"jsdoc/require-jsdoc": "off",
+		"jsdoc/require-returns": "off",
+		"jsdoc/require-property-description": "off",
+		"import/no-default-export": "error",
+		"no-restricted-imports": [
+			"warn",
+			{
+				"paths": [
+					{
+						"name": "@mui/material",
+						"message": "Please import from '@material-ui/<Component_Name>' instead."
+					},
+					{
+						"name": "@mui/icons-material",
+						"message": "Please import from '@mui/icons-material/<Icon_Name>' instead."
+					}
+				]
+			}
+		]
+		// "import/no-restricted-paths": [
+		// 	"error",
+		// 	{
+		// 		"zones": [
+		// 			{
+		// 				"target": "./src/libs/tanstack-query.js",
+		// 				"from": "./src/pages/login/login-page.jsx",
+		// 				"message": "Importing \"queryClient\" from libs/ folder is not allowed. Use the hook \"useQueryClient\" instead."
+		// 			}
+		// 		]
+		// 	}
+		// ]
+		//
+		// No logré que funcionara
+	}
+}
